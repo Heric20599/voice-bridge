@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to Sentiment</title>
+</head>
+<body>
+    <h1>Voice to Sentiment</h1>
+    <form action="/voice-to-sentiment" method="post" enctype="multipart/form-data">
+        <label for="audio">Upload audio file:</label><br>
+        <input type="file" id="audio" name="audio" accept="audio/*" required><br><br>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+    {% if text %}
+    <h2>Transcribed Text:</h2>
+    <p>{{ text }}</p>
+    <h2>Sentiment Analysis Results:</h2>
+    <p>Polarity: {{ polarity }}</p>
+    <p>Subjectivity: {{ subjectivity }}</p>
+    {% endif %}
+    <br><a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text</title>
+</head>
+<body>
+    <h1>Speech to Text</h1>
+    <form action="/speech-to-text" method="post" enctype="multipart/form-data">
+        <label for="audio">Upload audio file:</label><br>
+        <input type="file" id="audio" name="audio" accept="audio/*" required><br><br>
+        <button type="submit">Convert to Text</button>
+    </form>
+    {% if text %}
+    <h2>Transcribed Text:</h2>
+    <p>{{ text }}</p>
+    {% endif %}
+    <br><a href="/">Back to Home</a>
+</body>
+</html>

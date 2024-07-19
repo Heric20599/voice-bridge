@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+</head>
+<body>
+    <h1>Text to Speech</h1>
+    <form action="/text-to-speech" method="post">
+        <label for="text">Enter text:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50" required></textarea><br><br>
+        <button type="submit">Convert to Speech</button>
+    </form>
+    {% if url_for('static', filename='speech.mp3') %}
+    <p>Download your audio file: <a href="{{ url_for('static', filename='speech.mp3') }}" download>Download</a></p>
+    {% endif %}
+    <br><a href="/">Back to Home</a>
+</body>
+</html>

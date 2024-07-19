@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <h1>File Upload for Language Conversion</h1>
+    <form action="/file-upload" method="post" enctype="multipart/form-data">
+        <label for="file">Upload a text file:</label><br>
+        <input type="file" id="file" name="file" accept=".txt" required><br><br>
+        <button type="submit">Upload and Convert</button>
+    </form>
+    {% if url_for('static', filename='translated.txt') %}
+    <h2>Download Translated File:</h2>
+    <p><a href="{{ url_for('static', filename='translated.txt') }}" download>Download Translated File</a></p>
+    {% endif %}
+    <br><a href="/">Back to Home</a>
+</body>
+</html>
