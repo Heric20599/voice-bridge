@@ -3,4 +3,4 @@ werkzeug==2.2.3  # or any version >= 2.2.0
 pydub==0.25.1
 SpeechRecognition==3.8.1
 gunicorn==20.1.0
-summy==1.0.0  # Or the latest version if needed
+
